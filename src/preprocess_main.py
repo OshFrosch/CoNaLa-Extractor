@@ -32,7 +32,7 @@ def main():
             ('train', 'valid', 'test'),
             (train, valid, test),
     ):
-        output_file = output_dir / f'{split_name}_output_file.txt'
+        output_file = output_dir / f'python_preprocessed_{split_name}.txt'
         collect_all_and_save(split, output_file)
 
 
