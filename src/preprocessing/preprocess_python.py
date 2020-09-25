@@ -8,17 +8,6 @@ import joblib
 
 METHOD_NAME, NUM = 'METHODNAME', 'NUM'
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--data_dir', required=True, type=str)
-parser.add_argument('--valid_p', type=float, default=0.2)
-parser.add_argument('--max_path_length', type=int, default=8)
-parser.add_argument('--max_path_width', type=int, default=2)
-parser.add_argument('--use_method_name', type=bool, default=True)
-parser.add_argument('--use_nums', type=bool, default=True)
-parser.add_argument('--output_dir', required=True, type=str)
-parser.add_argument('--n_jobs', type=int, default=multiprocessing.cpu_count())
-parser.add_argument('--seed', type=int, default=239)
-
 max_path_length = 8
 max_path_width = 2
 use_method_name = True
