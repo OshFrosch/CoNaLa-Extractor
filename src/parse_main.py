@@ -1,8 +1,8 @@
 import jsonlines
 from tqdm import tqdm
 
-from src.parse_python import parse_code_string
-from src.file_len import file_len
+from src.ast_parsing.parse_python import parse_code_string
+from src.helper.file_len import file_len
 
 total_lines = file_len('../res/conala-corpus/conala-mined.jsonl')
 substrings = ['!', '@', '#', '$', ':', ',', '?', '/', ';', '.', "'", ' - ', '"', '`', '%',
