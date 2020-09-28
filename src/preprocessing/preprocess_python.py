@@ -99,7 +99,7 @@ def delim_name(name):
 
 def collect_sample(ast, target, fd_index):
     root = ast[fd_index]
-    if root['type'] != 'FunctionDef':
+    if root['type'] != 'Module':
         raise ValueError('Wrong node type.')
 
     tree_paths = raw_tree_paths(ast, fd_index)
@@ -128,7 +128,7 @@ def collect_samples(example):
     ast = example[1]
 
     for node_index, node in enumerate(ast):
-        if node['type'] == 'FunctionDef':
+        if node['type'] == 'Module':
             sample = collect_sample(ast, target, node_index)
             if sample is not None:
                 samples.append(sample)
