@@ -2,7 +2,7 @@ import numpy as np
 from pathlib import Path
 from sklearn import model_selection as sklearn_model_selection
 from src.preprocessing.preprocess_python import collect_all_and_save
-from src.helper.collect_asts import collect_asts
+from src.helper.collect_examples import collect_examples
 
 seed = 239
 valid_p = 0.2
@@ -17,8 +17,8 @@ def main():
     np.random.seed(seed)
 
     data_dir = Path(in_dir)
-    trains = collect_asts(data_dir / 'python_small_train.json')
-    evals = collect_asts(data_dir / 'python_small_eval.json')
+    trains = collect_examples(data_dir / 'python_small_train.json')
+    evals = collect_examples(data_dir / 'python_small_eval.json')
 
     train, valid = sklearn_model_selection.train_test_split(
         trains,

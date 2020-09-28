@@ -1,4 +1,4 @@
-import argparse
+import json
 import re
 import multiprocessing
 import itertools
@@ -90,8 +90,9 @@ def delim_name(name):
         return [m.group(0) for m in matches]
 
     blocks = []
-    for underscore_block in name.split('_'):
-        blocks.extend(camel_case_split(underscore_block))
+    for block in name.split(' '):
+        for underscore_block in block.split('_'):
+            blocks.extend(camel_case_split(underscore_block))
 
     return '|'.join(block.lower() for block in blocks)
 
@@ -123,8 +124,11 @@ def collect_sample(ast, fd_index):
     return f'{target} {context}'
 
 
-def collect_samples(ast):
+def collect_samples(example):
     samples = []
+    target = example[0]
+    ast = example[1]
+
     for node_index, node in enumerate(ast):
         if node['type'] == 'FunctionDef':
             sample = collect_sample(ast, node_index)
@@ -134,11 +138,11 @@ def collect_samples(ast):
     return samples
 
 
-def collect_all_and_save(asts, output_file):
+def collect_all_and_save(examples, output_file):
     parallel = joblib.Parallel(n_jobs=n_jobs)
     func = joblib.delayed(collect_samples)
 
-    samples = parallel(func(ast) for ast in tqdm.tqdm(asts))
+    samples = parallel(func(example) for example in tqdm.tqdm(examples))
     samples = list(itertools.chain.from_iterable(samples))
 
     with open(output_file, 'w') as f:
