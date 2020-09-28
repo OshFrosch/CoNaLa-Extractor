@@ -10,10 +10,8 @@ def collect_examples(json_file):
                 if target_line:
                     target = line.strip()
                     target_line = False
-                    print(type(target))
                 else:
                     ast = json.loads(line.strip())
-                    print(type(ast))
                     examples.append([target, ast])
                     target_line = True
             except:

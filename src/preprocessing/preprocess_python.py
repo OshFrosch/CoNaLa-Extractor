@@ -97,12 +97,10 @@ def delim_name(name):
     return '|'.join(block.lower() for block in blocks)
 
 
-def collect_sample(ast, fd_index):
+def collect_sample(ast, target, fd_index):
     root = ast[fd_index]
     if root['type'] != 'FunctionDef':
         raise ValueError('Wrong node type.')
-
-    target = root['value']
 
     tree_paths = raw_tree_paths(ast, fd_index)
     contexts = []
@@ -131,7 +129,7 @@ def collect_samples(example):
 
     for node_index, node in enumerate(ast):
         if node['type'] == 'FunctionDef':
-            sample = collect_sample(ast, node_index)
+            sample = collect_sample(ast, target, node_index)
             if sample is not None:
                 samples.append(sample)
 
