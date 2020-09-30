@@ -1,11 +1,9 @@
 import jsonlines
-import json
 from tqdm import tqdm
 from sklearn import model_selection as sklearn_model_selection
 from src.ast_parsing.parse_python import parse_code_string
 from src.ast_parsing.clean_intent import clean_intent
 from src.helper.file_len import file_len
-from src.helper.collect_examples import collect_examples
 
 dataset = "../res/dataset/conala-corpus/conala-mined.jsonl"
 output_train = "../res/created/parsed/python_small.json"
