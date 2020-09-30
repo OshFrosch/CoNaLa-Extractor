@@ -2,8 +2,6 @@
 FROM python:3.7
 RUN python --version
 
-COPY requirements.txt
-
 # Edit with mysql-client, postgresql-client, sqlite3, etc. for your needs.
 # Or delete entirely if not needed.
 RUN apt-get update \
@@ -24,5 +22,3 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # For some other command
 # CMD ["python", "app.py"]
-
-RUN pip install -r requirements.txt
