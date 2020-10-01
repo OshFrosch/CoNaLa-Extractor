@@ -3,8 +3,7 @@ FROM python:3.7
 RUN python --version
 
 
-
-RUN apt-get update && apt-get g++ -y && \
+RUN apt-get update && apt-get install -y g++ && \
     apt-get install -y r-recommended && \
     apt-get install -y python3-dev && \
     pip install --upgrade setuptools && \
