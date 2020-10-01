@@ -6,7 +6,7 @@ stages:
 
 docker-build:
   # Official docker image.
-  image: docker:latest
+  image: registry.gitlab.com/oshfrosch/conala-extractor
   stage: build
   services:
     - docker:dind
