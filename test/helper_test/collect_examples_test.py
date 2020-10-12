@@ -7,7 +7,6 @@ import os
 class MainFileCase(unittest.TestCase):
     def setUp(self) -> None:
         self.ast = parse_code_string('print("Hi")')
-        print(self.ast)
         with open('test.json', 'w') as f:
             for i in range(20):
                 if i % 2 == 0:
