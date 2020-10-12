@@ -57,6 +57,7 @@ def main():
                     f.write(example[1] + '\n')
                 except (UnicodeEncodeError, UnicodeDecodeError):
                     pass
+        f.close()
 
 
 if __name__ == '__main__':
