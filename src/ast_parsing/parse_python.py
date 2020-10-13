@@ -18,7 +18,7 @@ def parse_code_string(code_string):
         json_node['value'] = identifier
         return pos
     
-    def traverse_list(l, node_type = 'list'):
+    def traverse_list(l, node_type='list'):
         pos = len(json_tree)
         json_node = {}
         json_tree.append(json_node)
@@ -26,7 +26,7 @@ def parse_code_string(code_string):
         children = []
         for item in l:
             children.append(traverse(item))
-        if (len(children) != 0):
+        if len(children) != 0:
             json_node['children'] = children
         return pos
         
@@ -58,7 +58,6 @@ def parse_code_string(code_string):
                 children.append(gen_identifier(n))
         elif isinstance(node, ast.keyword):
             json_node['value'] = str(node.arg)
-        
 
         # Process children.
         if isinstance(node, ast.For):

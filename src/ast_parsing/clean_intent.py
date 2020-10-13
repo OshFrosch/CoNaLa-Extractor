@@ -5,7 +5,6 @@ substrings = ['!', '@', '#', '$', ',', '?', '/', ';', '.', "'", ' - ', '"', '`',
 
 def clean_intent(intent):
     intent = intent.lower()
-    print(intent)
     for substring in substrings:
         intent = intent.replace(substring, "")
     return intent
