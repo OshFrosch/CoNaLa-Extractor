@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -y g++ && \
     apt-get install -y r-recommended && \
     apt-get install -y python3-dev && \
     pip install --upgrade setuptools && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install -r requirements.txt
 
 
