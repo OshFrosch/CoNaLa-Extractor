@@ -1,5 +1,11 @@
 # ignore venv
-venv/
+/venv/
+
+/.idea/
+
+/res/
+
+/models/
+
+# MacOS specific
 .DS_Store
-.idea/
-res/
