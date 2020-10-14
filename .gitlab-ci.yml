@@ -1,8 +1,3 @@
-stages:
-  - build
-  - test
-  - code checker
-
 docker-build-master:
   # Official docker image.
   image: docker:latest
@@ -21,7 +16,7 @@ unittest:
     - python3 -m unittest discover -s test -p "*_test.py"
 
 
-code-checker:
+'''code-checker:
   stage: code checker
   script:
-    - python3.7 -m pycodestyle .
+    - python3.7 -m pycodestyle .'''
