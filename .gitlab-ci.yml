@@ -10,3 +10,8 @@ docker-build-master:
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
+
+unittest:
+  stage: test
+  script:
+    - python3 -m unittest discover -s test -p "*_test.py"
