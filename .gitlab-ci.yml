@@ -24,4 +24,4 @@ unittest:
 code-checker:
   stage: code checker
   script:
-    - python -m pycodestyle .
+    - opt/anaconda3/bin/python3.7 -m pycodestyle .

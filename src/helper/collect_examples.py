@@ -14,7 +14,7 @@ def collect_examples(json_file):
                     ast = json.loads(line.strip())
                     examples.append([target, ast])
                     target_line = True
-            except:
+            except Exception:
                 pass
 
     return examples
