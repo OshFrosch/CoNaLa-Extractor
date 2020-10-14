@@ -18,7 +18,7 @@ unittest:
 
 
 code-checker:
-  stage: pycodestyle checker
+  stage: deploy
   script:
     - python -m pycodestyle .
 
