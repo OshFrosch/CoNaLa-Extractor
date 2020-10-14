@@ -15,3 +15,10 @@ unittest:
   stage: test
   script:
     - python3 -m unittest discover -s test -p "*_test.py"
+
+
+code-checker:
+  stage: pycodestyle checker
+  script:
+    - python -m pycodestyle .
+
