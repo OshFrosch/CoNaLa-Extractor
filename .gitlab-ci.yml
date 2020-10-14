@@ -24,5 +24,4 @@ unittest:
 code-checker:
   stage: code checker
   script:
-    - python3.8 -m pycodestyle .
-
+    - python -m pycodestyle .
