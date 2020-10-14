@@ -14,9 +14,3 @@ unittest:
   stage: test
   script:
     - python3 -m unittest discover -s test -p "*_test.py"
-
-
-'''code-checker:
-  stage: code checker
-  script:
-    - python3.7 -m pycodestyle .'''
