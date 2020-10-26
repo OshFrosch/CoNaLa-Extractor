@@ -20,14 +20,14 @@ class MainFileCase(unittest.TestCase):
         self.assertEqual(len(root['children']) > 0, True)
 
         for node in ast:
-            self.assertEqual('type' in node.keys(), True)
-            if 'children' in node.keys():
+            self.assertEqual('type' in node, True)
+            if 'children' in node:
                 children = node['children']
                 self.assertEqual(type(children), list)
                 for child in children:
                     self.assertEqual(child <= len(ast), True)
                     self.assertEqual(ast[child] is not None, True)
-            if 'value' in node.keys():
+            if 'value' in node:
                 self.assertEqual(type(node['value']), str)
 
     def tearDown(self) -> None:

@@ -42,9 +42,9 @@ class MyTestCase(unittest.TestCase):
             for node in path_list:
                 self.assertEqual(node < len(self.ast), True)
                 self.assertEqual(self.ast[node] is not None, True)
-            self.assertEqual('value' in self.ast[path_list[0]].keys(), True)
+            self.assertEqual('value' in self.ast[path_list[0]], True)
             self.assertEqual(self.ast[path_list[0]]['value'], start_terminal)
-            self.assertEqual('value' in self.ast[path_list[-1]].keys(), True)
+            self.assertEqual('value' in self.ast[path_list[-1]], True)
             self.assertEqual(self.ast[path_list[-1]]['value'], end_terminal)
 
     def test_collect_example(self):
